@@ -70,7 +70,7 @@ const Services = () => {
             <motion.div
               key={index}
               variants={item}
-              className="p-8 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-xl hover:border-mi-blue/10 transition-all group"
+              className="p-8 rounded-2xl glass border-white/20 shadow-sm hover:shadow-xl hover:border-mi-blue/20 hover:-translate-y-1 transition-all group"
             >
               <div className="w-16 h-16 rounded-2xl bg-mi-blue/5 flex items-center justify-center mb-6 group-hover:bg-mi-blue/10 transition-colors">
                 {service.icon}

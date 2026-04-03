@@ -1,27 +1,65 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Menu, X, Phone } from 'lucide-react';
-import { CONTACT_INFO } from '../constants/contactInfo';
-import { WhatsAppLogo } from './ui/WhatsAppFAB';
+import { motion } from "framer-motion";
+import { Menu, Phone, X } from "lucide-react";
+import { useEffect, useState } from "react";
+import { CONTACT_INFO } from "../constants/contactInfo";
+import { WhatsAppLogo } from "./ui/WhatsAppFAB";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+
+      const totalScroll =
+        document.documentElement.scrollHeight - window.innerHeight;
+      const currentProgress = (window.scrollY / totalScroll) * 100;
+      setScrollProgress(currentProgress);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const navLinks = [
-    { name: 'Home', href: '#' },
-    { name: 'Services', href: '#services' },
-    { name: 'Pricing', href: '#pricing' },
-    { name: 'How It Works', href: '#how-it-works' },
-    { name: 'Contact', href: '#contact' },
+    { name: "Home", href: "#" },
+    { name: "Services", href: "#services" },
+    { name: "Pricing", href: "#pricing" },
+    { name: "How It Works", href: "#how-it-works" },
+    { name: "Contact", href: "#contact" },
   ];
 
   return (
-    <nav className="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-20 items-center">
+    <nav
+      className={`fixed w-full z-50 transition-all duration-500 ${
+        scrolled ? "top-4 px-4 sm:px-6 lg:px-8" : "top-0"
+      }`}
+    >
+      <div
+        className={`max-w-7xl mx-auto transition-all duration-500 ${
+          scrolled
+            ? "glass rounded-full px-6 shadow-xl border-white/40"
+            : "bg-white/80 backdrop-blur-md border-b border-gray-100"
+        }`}
+      >
+        {/* Scroll Progress Bar
+        <div 
+          className="absolute bottom-0 left-0 h-0.5 bg-mi-blue transition-all duration-150 "
+          style={{ width: `${scrollProgress}%` }}
+        /> */}
+
+        <div
+          className={`flex justify-between items-center transition-all duration-500 ${
+            scrolled ? "h-16" : "h-20"
+          }`}
+        >
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
-            <span className="text-2xl font-bold text-mi-navy">Micore<span className="text-mi-blue">tech</span></span>
+            <span className="text-2xl font-bold text-mi-navy">
+              Micore<span className="text-mi-blue">tech</span>
+            </span>
           </div>
 
           {/* Desktop Nav */}
@@ -39,14 +77,14 @@ const Navbar = () => {
 
           {/* CTAs */}
           <div className="hidden md:flex items-center space-x-4">
-            <a 
+            <a
               href={`tel:${CONTACT_INFO.phoneRaw}`}
               className="flex items-center px-6 py-2.5 rounded-full border-2 border-mi-navy/10 text-mi-navy font-semibold hover:bg-mi-navy/5 transition-all"
             >
               <Phone size={18} className="mr-2" />
               Call Now
             </a>
-            <a 
+            <a
               href={CONTACT_INFO.whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
@@ -72,7 +110,9 @@ const Navbar = () => {
       {/* Mobile Nav */}
       <motion.div
         initial={false}
-        animate={isOpen ? { height: 'auto', opacity: 1 } : { height: 0, opacity: 0 }}
+        animate={
+          isOpen ? { height: "auto", opacity: 1 } : { height: 0, opacity: 0 }
+        }
         className="md:hidden overflow-hidden bg-white border-b border-gray-100"
       >
         <div className="px-4 pt-2 pb-6 space-y-2">
@@ -87,14 +127,14 @@ const Navbar = () => {
             </a>
           ))}
           <div className="pt-4 flex flex-col space-y-3">
-            <a 
+            <a
               href={`tel:${CONTACT_INFO.phoneRaw}`}
               className="flex items-center justify-center w-full px-6 py-3 rounded-full border-2 border-mi-navy/10 text-mi-navy font-semibold"
             >
               <Phone size={18} className="mr-2" />
               Call Now
             </a>
-            <a 
+            <a
               href={CONTACT_INFO.whatsappLink}
               target="_blank"
               rel="noopener noreferrer"

@@ -5,48 +5,51 @@ import { Check, ArrowRight } from 'lucide-react';
 const Pricing = () => {
   const plans = [
     {
-      name: 'Basic',
+      name: 'Single Fix',
       price: '₹499',
       features: [
-        'Single issue fix',
-        '30-min remote session',
-        'Email follow-up',
-        'Basic PC tune-up'
+        'Single device troubleshooting',
+        '30-min premium remote session',
+        'Email resolution report',
+        'Basic system check-up'
       ],
       highlight: false,
     },
     {
-      name: 'Standard',
+      name: 'Home Care',
       price: '₹999',
       features: [
-        'Full OS Optimization',
+        'Full System Optimization',
         'Virus & Malware Removal',
-        '60-min priority session',
-        'Home network check',
-        '30-day support window'
+        '60-min priority assistance',
+        'Home network security check',
+        '30-day follow-up support'
       ],
       highlight: true,
     },
     {
-      name: 'Advanced',
+      name: 'Concierge',
       price: '₹1,499',
       features: [
-        'Multi-device setup',
-        'M365 Migration/Sync',
-        '2-hour deep support',
-        'Security hardening',
-        'Direct tech WhatsApp access'
+        'Multi-device ecosystem setup',
+        'M365 & Cloud Sync Support',
+        '2-hour deep-dive support',
+        'Security & Privacy hardening',
+        'Direct 24/7 WhatsApp access'
       ],
       highlight: false,
     },
   ];
 
   return (
-    <section id="pricing" className="py-24 bg-mi-light/30">
+    <section id="pricing" className="py-24 bg-mi-light/30 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-mi-navy font-bold text-4xl mb-4 tracking-tight">Simple, Honest <span className="text-mi-blue">Pricing</span></h2>
-          <p className="text-mi-navy/60 font-medium text-lg">No hidden fees. No surprise charges. Just expert help when you need it.</p>
+          <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-mi-blue/10 text-mi-blue font-bold text-xs uppercase tracking-widest mb-6">
+            100% Satisfaction Guaranteed
+          </div>
+          <h2 className="text-mi-navy font-bold text-4xl md:text-5xl mb-4 tracking-tight">Simple, Honest <span className="text-mi-blue">Pricing</span></h2>
+          <p className="text-mi-navy/60 font-medium text-lg">Transparent pricing with no hidden costs. Expert help at a fair price.</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -57,10 +60,10 @@ const Pricing = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
               viewport={{ once: true }}
-              className={`p-10 rounded-3xl relative transition-all duration-300 ${
+              className={`p-10 rounded-3xl relative transition-all duration-500 ${
                 plan.highlight
-                  ? 'bg-mi-navy text-white shadow-2xl shadow-mi-navy/20 scale-105 z-10'
-                  : 'bg-white border border-gray-100 shadow-sm hover:shadow-xl'
+                  ? 'bg-mi-navy text-white shadow-2xl shadow-mi-navy/20 scale-105 z-10 border border-white/10'
+                  : 'glass border-white/40 shadow-sm hover:shadow-xl hover:-translate-y-1'
               }`}
             >
               {plan.highlight && (

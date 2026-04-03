@@ -14,13 +14,17 @@ const PersonalSupport = () => {
             viewport={{ once: true }}
             className="w-full lg:w-1/2 relative"
           >
-            <div className="aspect-square bg-mi-light rounded-3xl overflow-hidden shadow-2xl relative">
-              {/* This would be the hero.png or a placeholder */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-mi-navy/10 to-transparent"></div>
-              <div className="flex flex-col items-center justify-center h-full p-12 text-center">
-                 <MousePointer2 size={80} className="text-mi-blue animate-bounce mb-8" />
-                 <h3 className="text-3xl font-bold text-mi-navy mb-4">Remote Support In Action</h3>
-                 <p className="text-mi-navy/60 font-medium">Safe, secure, and completely transparent remote desktop assistance.</p>
+            <div className="aspect-square bg-mi-light/50 rounded-3xl overflow-hidden shadow-2xl relative border border-gray-100 group">
+              {/* Custom Generated Illustration */}
+              <img 
+                src="/tech-expert.png" 
+                alt="Expert Technical Support" 
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-mi-navy/40 to-transparent"></div>
+              <div className="absolute bottom-8 left-8 right-8 text-white">
+                 <h3 className="text-2xl font-bold mb-2">Remote Support In Action</h3>
+                 <p className="text-white/80 text-sm font-medium leading-relaxed">Safe, secure, and completely transparent remote desktop assistance.</p>
               </div>
             </div>
             {/* Floating Card */}
@@ -41,10 +45,10 @@ const PersonalSupport = () => {
 
           {/* Right: Content */}
           <div className="w-full lg:w-1/2">
-            <h2 className="text-mi-blue font-bold text-sm tracking-widest uppercase mb-4">The Personal Touch</h2>
-            <h2 className="text-4xl md:text-5xl font-bold text-mi-navy mb-8 leading-tight">Technology Support That <span className="text-mi-blue">Feels Like Family</span></h2>
+            <h2 className="text-mi-blue font-bold text-sm tracking-widest uppercase mb-4">The Solution</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-mi-navy mb-8 leading-tight">One Call. Total Resolution <span className="text-mi-blue">In Minutes.</span></h2>
             <p className="text-mi-navy/60 text-lg font-medium leading-relaxed mb-8">
-              We don't just fix computers; we help people. Our remote support is designed to be as friendly as a house call, but with the speed of the digital age.
+              Whether it's a slow PC, WiFi dead zones, or software glitches—one call to Micore fixed it all. No long waits, no complex jargon. Just expert help when you need it most.
             </p>
 
             <div className="space-y-6">
