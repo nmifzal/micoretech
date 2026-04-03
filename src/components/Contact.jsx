@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, MessageSquare } from 'lucide-react';
+import { CONTACT_INFO } from '../constants/contactInfo';
 
 const Contact = () => {
   return (
@@ -15,11 +16,11 @@ const Contact = () => {
             
             <div className="space-y-8">
               {[
-                { title: 'Call Us Now', icon: <Phone size={24} />, content: '+91 98765 43210' },
-                { title: 'Email Support', icon: <Mail size={24} />, content: 'support@micoretech.com' },
-                { title: 'Global Remote Support', icon: <MapPin size={24} />, content: 'Serving Home Users Worldwide' },
+                { title: 'Call Us Now', icon: <Phone size={24} />, content: CONTACT_INFO.phone, link: `tel:${CONTACT_INFO.phoneRaw}` },
+                { title: 'WhatsApp Now', icon: <MessageSquare size={24} />, content: CONTACT_INFO.phone, link: CONTACT_INFO.whatsappLink },
+                { title: 'Email Support', icon: <Mail size={24} />, content: CONTACT_INFO.email, link: `mailto:${CONTACT_INFO.email}` },
               ].map((item, id) => (
-                <div key={id} className="flex items-center gap-6 group">
+                <a key={id} href={item.link} className="flex items-center gap-6 group cursor-pointer" target={item.link.startsWith('http') ? "_blank" : undefined} rel={item.link.startsWith('http') ? "noopener noreferrer" : undefined}>
                   <div className="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center text-mi-blue group-hover:bg-mi-blue group-hover:text-white transition-all">
                     {item.icon}
                   </div>
@@ -27,7 +28,7 @@ const Contact = () => {
                     <p className="text-white/40 text-xs font-bold uppercase tracking-widest mb-1">{item.title}</p>
                     <p className="text-xl font-bold">{item.content}</p>
                   </div>
-                </div>
+                </a>
               ))}
             </div>
           </div>

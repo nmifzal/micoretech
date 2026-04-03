@@ -1,5 +1,5 @@
-import React from 'react';
-import { ShieldCheck, Globe, Share2, Mail, Phone } from 'lucide-react';
+import { ShieldCheck, Globe, Share2, Mail, Phone, MessageSquare } from 'lucide-react';
+import { CONTACT_INFO } from '../constants/contactInfo';
 
 const Footer = () => {
   return (
@@ -24,11 +24,18 @@ const Footer = () => {
 
         {/* Social Links (Generic) */}
         <div className="flex items-center gap-6">
-           {[Globe, Share2, Mail, Phone].map((Icon, id) => (
-              <a key={id} href="#" className="text-mi-navy/40 hover:text-mi-blue transition-colors">
-                 <Icon size={20} />
-              </a>
-           ))}
+          <a href={CONTACT_INFO.whatsappLink} target="_blank" rel="noopener noreferrer" className="text-mi-navy/40 hover:text-mi-blue transition-colors">
+            <MessageSquare size={20} />
+          </a>
+          <a href={`tel:${CONTACT_INFO.phoneRaw}`} className="text-mi-navy/40 hover:text-mi-blue transition-colors">
+            <Phone size={20} />
+          </a>
+          <a href={`mailto:${CONTACT_INFO.email}`} className="text-mi-navy/40 hover:text-mi-blue transition-colors">
+            <Mail size={20} />
+          </a>
+          <a href="#" className="text-mi-navy/40 hover:text-mi-blue transition-colors">
+            <Globe size={20} />
+          </a>
         </div>
       </div>
     </footer>

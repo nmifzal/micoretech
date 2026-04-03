@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Menu, X, Phone, MessageSquare } from 'lucide-react';
+import { CONTACT_INFO } from '../constants/contactInfo';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -37,14 +38,22 @@ const Navbar = () => {
 
           {/* CTAs */}
           <div className="hidden md:flex items-center space-x-4">
-            <button className="flex items-center px-6 py-2.5 rounded-full border-2 border-mi-navy/10 text-mi-navy font-semibold hover:bg-mi-navy/5 transition-all">
+            <a 
+              href={`tel:${CONTACT_INFO.phoneRaw}`}
+              className="flex items-center px-6 py-2.5 rounded-full border-2 border-mi-navy/10 text-mi-navy font-semibold hover:bg-mi-navy/5 transition-all"
+            >
               <Phone size={18} className="mr-2" />
               Call Now
-            </button>
-            <button className="flex items-center px-6 py-2.5 rounded-full bg-mi-green text-white font-semibold hover:bg-mi-green/90 transition-all shadow-lg shadow-mi-green/20">
+            </a>
+            <a 
+              href={CONTACT_INFO.whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center px-6 py-2.5 rounded-full bg-mi-green text-white font-semibold hover:bg-mi-green/90 transition-all shadow-lg shadow-mi-green/20"
+            >
               <MessageSquare size={18} className="mr-2" />
               WhatsApp
-            </button>
+            </a>
           </div>
 
           {/* Mobile menu button */}
@@ -77,14 +86,22 @@ const Navbar = () => {
             </a>
           ))}
           <div className="pt-4 flex flex-col space-y-3">
-            <button className="flex items-center justify-center w-full px-6 py-3 rounded-full border-2 border-mi-navy/10 text-mi-navy font-semibold">
+            <a 
+              href={`tel:${CONTACT_INFO.phoneRaw}`}
+              className="flex items-center justify-center w-full px-6 py-3 rounded-full border-2 border-mi-navy/10 text-mi-navy font-semibold"
+            >
               <Phone size={18} className="mr-2" />
               Call Now
-            </button>
-            <button className="flex items-center justify-center w-full px-6 py-3 rounded-full bg-mi-green text-white font-semibold">
+            </a>
+            <a 
+              href={CONTACT_INFO.whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center w-full px-6 py-3 rounded-full bg-mi-green text-white font-semibold"
+            >
               <MessageSquare size={18} className="mr-2" />
               WhatsApp
-            </button>
+            </a>
           </div>
         </div>
       </motion.div>
