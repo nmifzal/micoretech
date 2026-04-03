@@ -1,5 +1,6 @@
-import { ShieldCheck, Globe, Share2, Mail, Phone, MessageSquare } from 'lucide-react';
+import { ShieldCheck, Globe, Mail, Phone } from 'lucide-react';
 import { CONTACT_INFO } from '../constants/contactInfo';
+import { WhatsAppLogo } from './ui/WhatsAppFAB';
 
 const Footer = () => {
   return (
@@ -24,8 +25,8 @@ const Footer = () => {
 
         {/* Social Links (Generic) */}
         <div className="flex items-center gap-6">
-          <a href={CONTACT_INFO.whatsappLink} target="_blank" rel="noopener noreferrer" className="text-mi-navy/40 hover:text-mi-blue transition-colors">
-            <MessageSquare size={20} />
+          <a href={CONTACT_INFO.whatsappLink} target="_blank" rel="noopener noreferrer" className="text-mi-navy/40 hover:text-[#25D366] transition-colors">
+            <WhatsAppLogo className="w-5 h-5" />
           </a>
           <a href={`tel:${CONTACT_INFO.phoneRaw}`} className="text-mi-navy/40 hover:text-mi-blue transition-colors">
             <Phone size={20} />

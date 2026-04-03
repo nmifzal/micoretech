@@ -1,7 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Send, MessageSquare } from 'lucide-react';
+import { Mail, Phone, MapPin, Send } from 'lucide-react';
 import { CONTACT_INFO } from '../constants/contactInfo';
+import { WhatsAppLogo } from './ui/WhatsAppFAB';
 
 const Contact = () => {
   return (
@@ -17,11 +18,11 @@ const Contact = () => {
             <div className="space-y-8">
               {[
                 { title: 'Call Us Now', icon: <Phone size={24} />, content: CONTACT_INFO.phone, link: `tel:${CONTACT_INFO.phoneRaw}` },
-                { title: 'WhatsApp Now', icon: <MessageSquare size={24} />, content: CONTACT_INFO.phone, link: CONTACT_INFO.whatsappLink },
+                { title: 'WhatsApp Now', icon: <WhatsAppLogo className="w-6 h-6" />, content: CONTACT_INFO.phone, link: CONTACT_INFO.whatsappLink, isWhatsApp: true },
                 { title: 'Email Support', icon: <Mail size={24} />, content: CONTACT_INFO.email, link: `mailto:${CONTACT_INFO.email}` },
               ].map((item, id) => (
                 <a key={id} href={item.link} className="flex items-center gap-6 group cursor-pointer" target={item.link.startsWith('http') ? "_blank" : undefined} rel={item.link.startsWith('http') ? "noopener noreferrer" : undefined}>
-                  <div className="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center text-mi-blue group-hover:bg-mi-blue group-hover:text-white transition-all">
+                  <div className={`w-14 h-14 rounded-2xl flex items-center justify-center transition-all ${item.isWhatsApp ? 'bg-[#25D366]/10 text-[#25D366] group-hover:bg-[#25D366] group-hover:text-white' : 'bg-white/5 text-mi-blue group-hover:bg-mi-blue group-hover:text-white'}`}>
                     {item.icon}
                   </div>
                   <div>

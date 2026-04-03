@@ -7,6 +7,7 @@ import PersonalSupport from './components/PersonalSupport';
 import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import { WhatsAppFAB } from './components/ui/WhatsAppFAB';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Contact />
       </main>
       <Footer />
+      <WhatsAppFAB />
     </div>
   );
 }

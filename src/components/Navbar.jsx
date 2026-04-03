@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Menu, X, Phone, MessageSquare } from 'lucide-react';
+import { Menu, X, Phone } from 'lucide-react';
 import { CONTACT_INFO } from '../constants/contactInfo';
+import { WhatsAppLogo } from './ui/WhatsAppFAB';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -49,9 +50,9 @@ const Navbar = () => {
               href={CONTACT_INFO.whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center px-6 py-2.5 rounded-full bg-mi-green text-white font-semibold hover:bg-mi-green/90 transition-all shadow-lg shadow-mi-green/20"
+              className="flex items-center px-6 py-2.5 rounded-full bg-[#25D366] text-white font-semibold hover:bg-[#25D366]/90 transition-all shadow-lg shadow-[#25D366]/20"
             >
-              <MessageSquare size={18} className="mr-2" />
+              <WhatsAppLogo className="mr-2 w-5 h-5" />
               WhatsApp
             </a>
           </div>
@@ -97,9 +98,9 @@ const Navbar = () => {
               href={CONTACT_INFO.whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center w-full px-6 py-3 rounded-full bg-mi-green text-white font-semibold"
+              className="flex items-center justify-center w-full px-6 py-3 rounded-full bg-[#25D366] text-white font-semibold"
             >
-              <MessageSquare size={18} className="mr-2" />
+              <WhatsAppLogo className="mr-2 w-5 h-5" />
               WhatsApp
             </a>
           </div>
