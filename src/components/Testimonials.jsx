@@ -4,7 +4,7 @@ import { Star, MessageSquare } from 'lucide-react';
 
 const Testimonials = () => {
   const reviews = [
-    { name: 'Sarah J.', age: 64, quote: 'I was afraid of remote access, but Micoretech made it feel so safe. My printer was fixed in 10 minutes!', rating: 5 },
+    { name: 'Sarah J.', age: 64, quote: 'I was afraid of remote access, but Micore Technologies made it feel so safe. My printer was fixed in 10 minutes!', rating: 5 },
     { name: 'Michael R.', age: 41, quote: 'No more waiting for a tech to come home. These guys are my go-to for all my Wi-Fi troubles.', rating: 5 },
     { name: 'David L.', age: 72, quote: 'They explained everything in plain English. No technical jargon, just results. Highly recommended!', rating: 5 },
   ];

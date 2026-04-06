@@ -7,9 +7,9 @@ const Footer = () => {
     <footer className="bg-white border-t border-gray-100 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
         {/* Logo and Copyright */}
-        <div className="flex flex-col items-center md:items-start text-center md:text-left">
-           <span className="text-2xl font-bold text-mi-navy mb-4 inline-block">Micore<span className="text-mi-blue">tech</span></span>
-           <p className="text-mi-navy/40 text-sm font-medium">© 2026 Micoretech B2C Tech Support. All rights reserved.</p>
+        <div className="flex flex-col items-center md:items-start text-center md:text-left gap-4">
+           <img src="/logo-full.png" alt="Micore Technologies" className="h-10 w-auto" />
+           <p className="text-mi-navy/40 text-sm font-medium">© 2026 Micore Technologies. Reliable IT. Real Support.</p>
         </div>
 
         {/* Security Badge */}

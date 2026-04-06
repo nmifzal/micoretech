@@ -44,15 +44,17 @@ const Navbar = () => {
         /> */}
 
         <div
-          className={`flex justify-between items-center transition-all duration-500 ${
-            scrolled ? "h-16" : "h-20"
+          className={` flex justify-between items-center transition-all duration-500 ${
+            scrolled ? "h-16" : "mx-2 h-20"
           }`}
         >
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
-            <span className="text-2xl font-bold text-mi-navy">
-              Micore<span className="text-mi-blue">tech</span>
-            </span>
+            <img
+              src="/logo-full.png"
+              alt="Micore Technologies"
+              className="h-12 w-auto"
+            />
           </div>
 
           {/* Desktop Nav */}

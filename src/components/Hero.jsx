@@ -35,7 +35,7 @@ const Hero = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-xl md:text-2xl text-mi-navy/70 mb-12 leading-relaxed max-w-3xl mx-auto"
           >
-            Fast, secure, and always here. We fix your home and remote office
+            Reliable IT. Real Support. We fix your home and remote office
             tech issues instantly—so you can focus on what matters.
           </motion.p>
 
