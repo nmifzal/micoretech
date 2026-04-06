@@ -2,14 +2,31 @@ import { ShieldCheck, Globe, Mail, Phone } from 'lucide-react';
 import { CONTACT_INFO } from '../constants/contactInfo';
 import { WhatsAppLogo } from './ui/WhatsAppFAB';
 
-const Footer = () => {
+const Footer = ({ openModal }) => {
   return (
     <footer className="bg-white border-t border-gray-100 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
         {/* Logo and Copyright */}
         <div className="flex flex-col items-center md:items-start text-center md:text-left gap-4">
            <img src="/logo-full.png" alt="Micore Technologies" className="h-10 w-auto" />
-           <p className="text-mi-navy/40 text-sm font-medium">© 2026 Micore Technologies. Reliable IT. Real Support.</p>
+           <p className="text-mi-navy/40 text-[10px] font-bold uppercase tracking-widest">Reliable IT. Real Support.</p>
+           
+           <div className="flex items-center gap-4 text-xs font-bold text-mi-blue/40 mt-1">
+              <button 
+                onClick={() => openModal('privacy')}
+                className="hover:text-mi-blue transition-colors cursor-pointer"
+              >
+                Privacy Policy
+              </button>
+              <button 
+                onClick={() => openModal('terms')}
+                className="hover:text-mi-blue transition-colors cursor-pointer"
+              >
+                Terms of Service
+              </button>
+           </div>
+           
+           <p className="text-mi-navy/40 text-[10px] font-medium mt-2">© 2026 Micore Technologies. All rights reserved.</p>
         </div>
 
         {/* Security Badge */}
