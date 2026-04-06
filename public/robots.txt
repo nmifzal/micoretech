@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://micoretech.com/sitemap.xml
+Sitemap: https://micoretech.in/sitemap.xml
