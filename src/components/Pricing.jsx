@@ -28,6 +28,22 @@ const Pricing = () => {
     { id: 'annual', label: 'Annual Plans' },
   ];
 
+  const getWhatsAppUrl = (plan) => {
+    const phoneNumber = "919500091500";
+    let message = `Hi Micore! I'm interested in the `;
+    
+    if (activeTab === 'one-time') {
+      message += `One-Time ${plan.name} Fix (${plan.price}).`;
+    } else if (activeTab === 'monthly') {
+      message += `Monthly ${plan.name} Plan (${plan.price}/mo).`;
+    } else {
+      message += `Annual ${plan.name} Plan (${plan.price}/year).`;
+    }
+    
+    message += ` Can you help me get started?`;
+    return `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+  };
+
   return (
     <section id="pricing" className="py-24 bg-mi-light/30 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -114,7 +130,10 @@ const Pricing = () => {
                   ))}
                 </div>
 
-                <button
+                <a
+                  href={getWhatsAppUrl(plan)}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className={`w-full py-4 rounded-xl font-bold transition-all flex items-center justify-center group ${
                     plan.highlight
                       ? 'bg-mi-yellow text-mi-navy hover:bg-mi-yellow/90 shadow-xl shadow-mi-yellow/20'
@@ -123,7 +142,7 @@ const Pricing = () => {
                 >
                   Get Started
                   <ArrowRight size={18} className="ml-2 transition-transform group-hover:translate-x-1" />
-                </button>
+                </a>
               </motion.div>
             ))}
           </AnimatePresence>

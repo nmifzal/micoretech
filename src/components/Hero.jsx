@@ -46,13 +46,21 @@ const Hero = () => {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-20"
           >
-            <button className="w-full sm:w-auto px-10 py-5 rounded-full bg-mi-blue text-white font-bold text-lg hover:bg-mi-blue/90 transition-all shadow-2xl shadow-mi-blue/20 flex items-center justify-center group">
+            <a 
+              href="https://wa.me/919500091500?text=Hi%20Micore!%20I'd%20like%20to%20get%20started%20with%20a%20free%20tech%20diagnosis.%20How%20can%20you%20help%20me%3F"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto px-10 py-5 rounded-full bg-mi-blue text-white font-bold text-lg hover:bg-mi-blue/90 transition-all shadow-2xl shadow-mi-blue/20 flex items-center justify-center group"
+            >
               Start Free Diagnosis
               <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
-            </button>
-            <button className="w-full sm:w-auto px-10 py-5 rounded-full border-2 border-mi-navy/5 text-mi-navy font-bold text-lg hover:bg-mi-navy/5 transition-all backdrop-blur-sm">
+            </a>
+            <a 
+              href="#services"
+              className="w-full sm:w-auto px-10 py-5 rounded-full border-2 border-mi-navy/5 text-mi-navy font-bold text-lg hover:bg-mi-navy/5 transition-all backdrop-blur-sm flex items-center justify-center"
+            >
               View Services
-            </button>
+            </a>
           </motion.div>
 
           {/* Trust Strip */}

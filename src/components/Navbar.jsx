@@ -3,20 +3,13 @@ import { Menu, Phone, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { CONTACT_INFO } from "../constants/contactInfo";
 import { WhatsAppLogo } from "./ui/WhatsAppFAB";
-
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
-
-      const totalScroll =
-        document.documentElement.scrollHeight - window.innerHeight;
-      const currentProgress = (window.scrollY / totalScroll) * 100;
-      setScrollProgress(currentProgress);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -85,7 +78,7 @@ const Navbar = () => {
               Call Now
             </a>
             <a
-              href={CONTACT_INFO.whatsappLink}
+              href="https://wa.me/919500091500?text=Hi%20Micore!%20I'm%20on%20your%20website%20and%20looking%20for%20some%20instant%20tech%20help."
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center px-6 py-2.5 rounded-full bg-[#25D366] text-white font-semibold hover:bg-[#25D366]/90 transition-all shadow-lg shadow-[#25D366]/20"
@@ -135,7 +128,7 @@ const Navbar = () => {
               Call Now
             </a>
             <a
-              href={CONTACT_INFO.whatsappLink}
+              href="https://wa.me/919500091500?text=Hi%20Micore!%20I'm%20on%20your%20website%20and%20looking%20for%20some%20instant%20tech%20help."
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center w-full px-6 py-3 rounded-full bg-[#25D366] text-white font-semibold"
