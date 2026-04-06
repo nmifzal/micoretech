@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
 import { CONTACT_INFO } from '../constants/contactInfo';
 import { WhatsAppLogo } from './ui/WhatsAppFAB';
+import DiagnosticWizard from './ui/DiagnosticWizard';
 
 const Contact = () => {
   return (
@@ -34,33 +35,14 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* Right: Simple Form */}
+          {/* Right: Interactive Assistant */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="p-10 rounded-3xl bg-white text-mi-navy shadow-2xl relative"
+            className="relative"
           >
-            <form className="space-y-6">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-sm font-bold mb-2">Name</label>
-                  <input type="text" className="w-full px-5 py-4 rounded-xl border border-gray-100 bg-mi-light/50 focus:border-mi-blue outline-none transition-colors" placeholder="John Doe" />
-                </div>
-                <div>
-                  <label className="block text-sm font-bold mb-2">Email</label>
-                  <input type="email" className="w-full px-5 py-4 rounded-xl border border-gray-100 bg-mi-light/50 focus:border-mi-blue outline-none transition-colors" placeholder="john@example.com" />
-                </div>
-              </div>
-              <div>
-                <label className="block text-sm font-bold mb-2">Message</label>
-                <textarea className="w-full px-5 py-4 rounded-xl border border-gray-100 bg-mi-light/50 focus:border-mi-blue outline-none transition-colors h-32" placeholder="Tell us about your tech issue..."></textarea>
-              </div>
-              <button className="w-full py-5 rounded-full bg-mi-blue text-white font-bold flex items-center justify-center hover:bg-mi-blue/90 transition-all shadow-xl shadow-mi-blue/20">
-                Send Message
-                <Send size={18} className="ml-2" />
-              </button>
-            </form>
+            <DiagnosticWizard />
           </motion.div>
         </div>
       </div>
