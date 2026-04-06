@@ -64,7 +64,7 @@ const Hero = () => {
           >
             {[
               { label: "100% Secure", icon: <ShieldCheck size={20} /> },
-              { label: "AES-256 Encrypted", icon: <Lock size={20} /> },
+              { label: "100% Private", icon: <Lock size={20} /> },
               { label: "Certified Techs", icon: <CheckCircle2 size={20} /> },
             ].map((item, id) => (
               <div

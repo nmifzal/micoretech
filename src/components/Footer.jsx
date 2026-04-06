@@ -18,7 +18,7 @@ const Footer = () => {
               <ShieldCheck size={20} />
            </div>
            <div className="text-left">
-              <p className="text-mi-navy font-bold text-xs uppercase tracking-widest">End-to-End Secure</p>
+              <p className="text-mi-navy font-bold text-xs uppercase tracking-widest">100% Privacy Protected</p>
               <p className="text-mi-navy/40 text-[10px] font-bold">Industry Standard Remote Support</p>
            </div>
         </div>

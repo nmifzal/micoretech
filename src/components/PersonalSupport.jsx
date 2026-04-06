@@ -38,7 +38,7 @@ const PersonalSupport = () => {
               </div>
               <div>
                 <p className="text-mi-navy font-bold text-sm">Secure Connection</p>
-                <p className="text-mi-navy/40 text-xs font-semibold">AES-256 Bit Encrypted</p>
+                <p className="text-mi-navy/40 text-xs font-semibold">100% Privacy Protected</p>
               </div>
             </motion.div>
           </motion.div>
@@ -53,7 +53,7 @@ const PersonalSupport = () => {
 
             <div className="space-y-6">
               {[
-                { title: 'Safe & Secure', icon: <ShieldCheck size={20} className="text-mi-blue" />, desc: 'End-to-end encrypted sessions with your permission at every step.' },
+                { title: 'Safe & Secure', icon: <ShieldCheck size={20} className="text-mi-blue" />, desc: 'Fully private support sessions requiring your permission at every step.' },
                 { title: 'Friendly Experts', icon: <HeartPulse size={20} className="text-mi-blue" />, desc: 'Human beings who speak plain English, not technical jargon.' },
                 { title: 'Instant Help', icon: <Settings size={20} className="text-mi-blue" />, desc: 'No appointments needed for emergency troubleshooting.' },
               ].map((item, id) => (
