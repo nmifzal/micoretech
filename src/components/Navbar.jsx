@@ -52,8 +52,9 @@ const Navbar = () => {
           <div className="flex-shrink-0 flex items-center">
             <img
               src="/logo-full.png"
-              alt="Micore Technologies"
+              alt="Micore Technologies - Your Personal Tech Concierge"
               className="h-12 w-auto"
+              fetchpriority="high"
             />
           </div>
 
@@ -95,6 +96,7 @@ const Navbar = () => {
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="text-mi-navy p-2"
+              aria-label={isOpen ? "Close menu" : "Open menu"}
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>

@@ -45,7 +45,14 @@ const DiagnosticWizard = () => {
     <div className="w-full bg-white rounded-[2.5rem] shadow-2xl shadow-mi-navy/10 min-h-[500px] flex flex-col relative overflow-hidden transition-all duration-500">
       
       {/* Progress Bar */}
-      <div className="h-1.5 w-full bg-mi-light flex">
+      <div 
+        className="h-1.5 w-full bg-mi-light flex"
+        role="progressbar"
+        aria-valuenow={step}
+        aria-valuemin="1"
+        aria-valuemax="3"
+        aria-label={`Step ${step} of 3`}
+      >
         <motion.div 
           initial={{ width: 0 }}
           animate={{ width: `${(step / 3) * 100}%` }}
@@ -53,7 +60,7 @@ const DiagnosticWizard = () => {
         />
       </div>
 
-      <div className="p-8 md:p-10 flex-grow flex flex-col">
+      <div className="p-8 md:p-10 flex-grow flex flex-col" aria-live="polite">
         <AnimatePresence mode="wait">
           
           {/* STEP 1: ISSUE SELECTION */}
@@ -65,12 +72,18 @@ const DiagnosticWizard = () => {
               exit={{ opacity: 0, x: -20 }}
               className="space-y-6"
             >
-              <div>
-                <h3 className="text-2xl font-bold text-mi-navy mb-2">What can we help you with?</h3>
-                <p className="text-mi-navy/50 text-sm font-medium">Select the category that matches your issue.</p>
+              <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                <div>
+                  <h3 id="step1-title" className="text-2xl font-bold text-mi-navy mb-2">What can we help you with?</h3>
+                  <p className="text-mi-navy/50 text-sm font-medium">Select the category that matches your issue.</p>
+                </div>
+                <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-mi-green/5 border border-mi-green/10 w-fit">
+                  <span className="status-dot"></span>
+                  <span className="text-[10px] font-bold text-mi-green uppercase tracking-wider">Expert Active</span>
+                </div>
               </div>
 
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-4" role="group" aria-labelledby="step1-title">
                 {issues.map((item) => (
                   <button
                     key={item.id}
@@ -101,14 +114,14 @@ const DiagnosticWizard = () => {
               className="space-y-6"
             >
               <div>
-                <button onClick={handleBack} className="flex items-center text-mi-navy/40 hover:text-mi-blue transition-colors text-xs font-bold uppercase tracking-widest mb-4">
+                <button onClick={handleBack} className="flex items-center text-mi-navy/40 hover:text-mi-blue transition-colors text-xs font-bold uppercase tracking-widest mb-4" aria-label="Go back to previous step">
                   <ChevronLeft size={14} className="mr-1" /> Back
                 </button>
-                <h3 className="text-2xl font-bold text-mi-navy mb-2">How urgent is this?</h3>
+                <h3 id="step2-title" className="text-2xl font-bold text-mi-navy mb-2">How urgent is this?</h3>
                 <p className="text-mi-navy/50 text-sm font-medium">Help us prioritize your troubleshooting.</p>
               </div>
 
-              <div className="space-y-4">
+              <div className="space-y-4" role="group" aria-labelledby="step2-title">
                 {urgencies.map((item) => (
                   <button
                     key={item.id}

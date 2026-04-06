@@ -55,14 +55,22 @@ const Pricing = () => {
           
           {/* Tab Toggle */}
           <div className="flex justify-center mt-8">
-            <div className="bg-white/50 backdrop-blur-md p-1.5 rounded-full border border-mi-navy/5 shadow-inner flex gap-1">
+            <div 
+              className="bg-white/50 backdrop-blur-md p-1.5 rounded-full border border-mi-navy/5 shadow-inner flex gap-1"
+              role="tablist"
+              aria-label="Pricing billing cycle"
+            >
               {tabs.map((tab) => (
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
+                  role="tab"
+                  aria-selected={activeTab === tab.id}
+                  aria-controls={`panel-${tab.id}`}
                   className={`px-6 py-2.5 rounded-full text-sm font-bold transition-all relative ${
                     activeTab === tab.id ? 'text-white' : 'text-mi-navy/60 hover:text-mi-navy'
                   }`}
+                  aria-label={`View ${tab.label}`}
                 >
                   {activeTab === tab.id && (
                     <motion.div
