@@ -1,18 +1,18 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;&display=swap");
 
 @theme {
-  --color-mi-navy: #0B1A3D;
-  --color-mi-blue: #007BFF;
-  --color-mi-green: #28A745;
-  --color-mi-yellow: #FFC107;
-  --color-mi-light: #F3F6FA;
-  
+  --color-mi-navy: #0b1a3d;
+  --color-mi-blue: #007bff;
+  --color-mi-green: #28a745;
+  --color-mi-yellow: #ffc107;
+  --color-mi-light: #f3f6fa;
+
   --font-inter: "Inter", sans-serif;
 }
 
 :root {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -41,8 +41,7 @@ body {
 @layer base {
   body {
     @apply bg-white text-mi-navy;
-    /* Prevent default browser scroll-behavior for Lenis */
-    scroll-behavior: auto !important;
+    scroll-behavior: smooth;
   }
 }
 
@@ -67,17 +66,4 @@ body {
   opacity: 0.03;
   z-index: 9999;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%2 noiseFilter)'/%3E%3C/svg%3E");
-}
-
-/* Lenis Fixes */
-html.lenis, html.lenis body {
-  height: auto;
-}
-
-.lenis.lenis-smooth {
-  scroll-behavior: auto !important;
-}
-
-.lenis.lenis-smooth [data-lenis-prevent] {
-  overscroll-behavior: contain;
 }
