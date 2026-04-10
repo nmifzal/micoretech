@@ -4,18 +4,26 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
+    "dev": "astro dev",
+    "build": "astro build",
     "lint": "eslint .",
-    "preview": "npm run build && wrangler dev",
-    "deploy": "npm run build && wrangler deploy"
+    "preview": "astro preview",
+    "deploy": "npm run build && wrangler deploy ./dist"
   },
   "dependencies": {
+    "@astrojs/cloudflare": "^13.1.8",
+    "@astrojs/react": "^5.0.3",
+    "@astrojs/sitemap": "^3.7.2",
+    "@nanostores/react": "^1.1.0",
+    "@tailwindcss/vite": "^4.2.2",
+    "astro": "^6.1.5",
     "framer-motion": "^12.38.0",
     "lucide-react": "^1.7.0",
+    "nanostores": "^1.2.0",
     "ogl": "^1.0.11",
     "react": "^19.2.4",
-    "react-dom": "^19.2.4"
+    "react-dom": "^19.2.4",
+    "typescript": "^6.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.29.0",
@@ -34,7 +42,10 @@
     "globals": "^17.4.0",
     "postcss": "^8.5.8",
     "tailwindcss": "^4.2.2",
-    "vite": "^8.0.1",
+    "vite": "^7.1.0",
     "wrangler": "^4.80.0"
+  },
+  "overrides": {
+    "vite": "^7"
   }
 }

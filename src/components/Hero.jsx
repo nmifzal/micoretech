@@ -18,26 +18,16 @@ const Hero = () => {
           </motion.div>
 
           {/* Heading */}
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-6xl md:text-8xl font-black tracking-tight text-mi-navy mb-8 leading-[1.1]"
-          >
+          <h1 className="text-6xl md:text-8xl font-black tracking-tight text-mi-navy mb-8 leading-[1.1] reveal-up">
             Your Personal <br />
             <span className="text-mi-blue">Tech Concierge</span>
-          </motion.h1>
+          </h1>
 
           {/* Subtext */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-xl md:text-2xl text-mi-navy/70 mb-12 leading-relaxed max-w-3xl mx-auto"
-          >
+          <p className="text-xl md:text-2xl text-mi-navy/70 mb-12 leading-relaxed max-w-3xl mx-auto reveal-up [animation-delay:150ms]">
             Reliable IT. Real Support. We fix your home and remote office
             tech issues instantly—so you can focus on what matters.
-          </motion.p>
+          </p>
 
           {/* CTAs */}
           <motion.div

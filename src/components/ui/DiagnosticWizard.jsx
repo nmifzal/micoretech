@@ -165,8 +165,9 @@ const DiagnosticWizard = () => {
 
               <div className="space-y-5">
                 <div>
-                  <label className="block text-[10px] font-black uppercase tracking-widest text-mi-navy/40 mb-2 ml-1">Your Full Name</label>
+                  <label htmlFor="user-name" className="block text-[10px] font-black uppercase tracking-widest text-mi-navy/40 mb-2 ml-1">Your Full Name</label>
                   <input 
+                    id="user-name"
                     type="text" 
                     value={selection.name}
                     onChange={(e) => setSelection({ ...selection, name: e.target.value })}

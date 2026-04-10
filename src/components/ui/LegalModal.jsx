@@ -1,7 +1,12 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { Scale, ShieldCheck, X } from "lucide-react";
+import { useStore } from "@nanostores/react";
+import { isLegalModalOpen, legalModalType, closeLegalModal } from "../../stores/legalStore";
 
-const LegalModal = ({ isOpen, type, onClose }) => {
+const LegalModal = () => {
+  const isOpen = useStore(isLegalModalOpen);
+  const type = useStore(legalModalType);
+  const onClose = closeLegalModal;
   const content = {
     privacy: {
       title: "Privacy Policy",

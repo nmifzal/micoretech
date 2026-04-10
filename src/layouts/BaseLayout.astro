@@ -1,0 +1,107 @@
+---
+interface Props {
+	title?: string;
+	description?: string;
+	preloadImage?: string;
+}
+
+const { 
+	title = "Micore Technologies | Your Personal Tech Concierge",
+	description = "Micore Technologies is your premium personal tech concierge in India. We provide white-glove remote IT support, troubleshooting, and proactive maintenance for freelancers, home offices, and luxury residence tech setups.",
+	preloadImage
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/png" href="/logo-icon.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- Asset Preloading -->
+		{preloadImage && <link rel="preload" href={preloadImage} as="image" />}
+		{!preloadImage && <link rel="preload" href="/logo-full.png" as="image" />}
+		<link rel="preload" href="/fonts/Inter-400.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
+		<link rel="preload" href="/fonts/Inter-500.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
+		<link rel="preload" href="/fonts/Inter-600.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
+		<link rel="preload" href="/fonts/Inter-700.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
+
+		<title>{title}</title>
+
+		<!-- SEO Meta Tags -->
+		<meta name="description" content={description} />
+		<meta name="keywords" content="personal tech concierge india, white-glove remote IT support, bespoke tech consultation, home office IT help, freelancer tech assistance india, wifi troubleshooting, micore technologies, secure remote IT, premium tech assistance, tech help for seniors india" />
+		<meta name="author" content="Micore Technologies" />
+		<meta name="robots" content="index, follow" />
+		<link rel="canonical" href="https://micoretech.in/" />
+
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://micoretech.in/" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content="https://micoretech.in/logo-full.png" />
+
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content="https://micoretech.in/" />
+		<meta property="twitter:title" content={title} />
+		<meta property="twitter:description" content={description} />
+		<meta property="twitter:image" content="https://micoretech.in/logo-full.png" />
+
+		<!-- Structured Data (JSON-LD) -->
+		<script type="application/ld+json">
+		  {
+			"@context": "https://schema.org",
+			"@type": "ProfessionalService",
+			"name": "Micore Technologies",
+			"image": "https://micoretech.in/logo-full.png",
+			"@id": "https://micoretech.in",
+			"url": "https://micoretech.in",
+			"telephone": "+919500091500",
+			"priceRange": "$$",
+			"address": {
+			  "@type": "PostalAddress",
+			  "streetAddress": "Remote Support Service",
+			  "addressLocality": "Chennai",
+			  "addressRegion": "TN",
+			  "postalCode": "600001",
+			  "addressCountry": "IN"
+			},
+			"geo": {
+			  "@type": "GeoCoordinates",
+			  "latitude": 13.0827,
+			  "longitude": 80.2707
+			},
+			"openingHoursSpecification": {
+			  "@type": "OpeningHoursSpecification",
+			  "dayOfWeek": [
+				"Monday",
+				"Tuesday",
+				"Wednesday",
+				"Thursday",
+				"Friday",
+				"Saturday",
+				"Sunday"
+			  ],
+			  "opens": "00:00",
+			  "closes": "23:59"
+			},
+			"sameAs": [
+			  "https://wa.me/919500091500"
+			]
+		  }
+		</script>
+
+		<slot name="head" />
+	</head>
+	<body class="bg-white font-inter selection:bg-mi-blue/20 selection:text-mi-blue overflow-x-hidden grainy-overlay">
+		<div id="root" class="min-h-screen">
+			<slot />
+		</div>
+	</body>
+</html>
+
+<style is:global>
+	@import "../index.css";
+</style>

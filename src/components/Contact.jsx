@@ -12,7 +12,7 @@ const Contact = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left: Contact Info */}
           <div>
-            <h2 className="text-mi-yellow font-bold uppercase text-sm mb-4 tracking-widest">Need Immediate Help?</h2>
+            <p className="text-mi-yellow font-bold uppercase text-sm mb-4 tracking-widest">Need Immediate Help?</p>
             <h2 className="text-4xl md:text-5xl font-bold mb-8">Let's Fix Your <span className="text-mi-blue">Tech Headache</span> Today</h2>
             <p className="text-white/60 text-lg mb-12 font-medium">Ready to get your devices back in shape? Contact our friendly experts for immediate remote assistance.</p>
             

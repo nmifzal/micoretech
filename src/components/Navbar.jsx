@@ -3,7 +3,7 @@ import { Menu, Phone, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { CONTACT_INFO } from "../constants/contactInfo";
 import { WhatsAppLogo } from "./ui/WhatsAppFAB";
-const Navbar = () => {
+const Navbar = ({ logoUrl }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -51,10 +51,10 @@ const Navbar = () => {
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
             <img
-              src="/logo-full.png"
+              src={logoUrl || "/logo-full.png"}
               alt="Micore Technologies - Your Personal Tech Concierge"
               className="h-12 w-auto"
-              fetchpriority="high"
+              fetchPriority="high"
             />
           </div>
 

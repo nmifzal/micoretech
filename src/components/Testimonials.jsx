@@ -58,9 +58,9 @@ const Testimonials = () => {
                   {review.name[0]}
                 </div>
                 <div>
-                  <h4 className="text-mi-navy font-bold text-sm">
+                  <h3 className="text-mi-navy font-bold text-sm">
                     {review.name}
-                  </h4>
+                  </h3>
                   <p className="text-mi-navy/40 text-xs font-semibold">
                     {review.age} years old
                   </p>

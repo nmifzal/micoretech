@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { MousePointer2, Settings, ShieldCheck, HeartPulse } from 'lucide-react';
 
-const PersonalSupport = () => {
+const PersonalSupport = ({ imageUrl }) => {
   return (
     <section id="how-it-works" className="py-24 overflow-hidden bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -17,7 +17,7 @@ const PersonalSupport = () => {
             <div className="aspect-square bg-mi-light/50 rounded-3xl overflow-hidden shadow-2xl relative border border-gray-100 group">
               {/* Custom Generated Illustration */}
               <img 
-                src="/tech-expert.png" 
+                src={imageUrl || "/tech-expert.png"} 
                 alt="Expert Technical Support" 
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
@@ -45,7 +45,7 @@ const PersonalSupport = () => {
 
           {/* Right: Content */}
           <div className="w-full lg:w-1/2">
-            <h2 className="text-mi-blue font-bold text-sm tracking-widest uppercase mb-4">The Solution</h2>
+            <p className="text-mi-blue font-bold text-sm tracking-widest uppercase mb-4">The Solution</p>
             <h2 className="text-4xl md:text-5xl font-bold text-mi-navy mb-8 leading-tight">One Call. Total Resolution <span className="text-mi-blue">In Minutes.</span></h2>
             <p className="text-mi-navy/60 text-lg font-medium leading-relaxed mb-8">
               Whether it's a slow PC, WiFi dead zones, or software glitches—one call to Micore fixed it all. No long waits, no complex jargon. Just expert help when you need it most.

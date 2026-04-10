@@ -1,0 +1,40 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar';
+import Hero from '../components/Hero';
+import Services from '../components/Services';
+import Pricing from '../components/Pricing';
+import PersonalSupport from '../components/PersonalSupport';
+import Testimonials from '../components/Testimonials';
+import Contact from '../components/Contact';
+import Footer from '../components/Footer';
+import { WhatsAppFAB } from '../components/ui/WhatsAppFAB';
+import LegalModal from '../components/ui/LegalModal';
+import Analytics from '../components/Analytics.astro';
+import { getImage } from 'astro:assets';
+
+// Optimized Assets
+import logoFull from '../assets/logo-full.png';
+import techExpert from '../assets/tech-expert.png';
+
+const optimizedLogo = await getImage({ src: logoFull, format: 'webp' });
+---
+
+<BaseLayout preloadImage={optimizedLogo.src}>
+	<Analytics slot="head" />
+	
+	<Navbar logoUrl={optimizedLogo.src} client:load />
+	
+	<main>
+		<Hero client:load />
+		<Services client:visible />
+		<Pricing client:visible />
+		<PersonalSupport imageUrl={techExpert.src} client:visible />
+		<Testimonials client:visible />
+		<Contact client:visible />
+	</main>
+	
+	<Footer client:visible />
+	<WhatsAppFAB client:load />
+	<LegalModal client:load />
+</BaseLayout>
