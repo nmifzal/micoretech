@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Menu, Phone, X } from "lucide-react";
+import { Menu, Phone, X, Mail } from "lucide-react";
 import { useEffect, useState } from "react";
 import { CONTACT_INFO } from "../constants/contactInfo";
 import { WhatsAppLogo } from "./ui/WhatsAppFAB";
@@ -72,22 +72,29 @@ const Navbar = () => {
           </div>
 
           {/* CTAs */}
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden md:flex items-center space-x-3">
             <a
-              href={`tel:${CONTACT_INFO.phoneRaw}`}
-              className="flex items-center px-6 py-2.5 rounded-full border-2 border-mi-navy/10 text-mi-navy font-semibold hover:bg-mi-navy/5 transition-all"
+              href={`mailto:${CONTACT_INFO.email}`}
+              aria-label="Email Support"
+              className="flex items-center justify-center w-10 h-10 rounded-full border-2 border-mi-navy/10 text-mi-navy hover:bg-mi-navy hover:text-white transition-all duration-300"
             >
-              <Phone size={18} className="mr-2" />
-              Call Now
+              <Mail size={18} />
             </a>
             <a
-              href="https://wa.me/919500091500?text=Hi%20Micore!%20I'm%20on%20your%20website%20and%20looking%20for%20some%20instant%20tech%20help."
+              href={`tel:${CONTACT_INFO.phoneRaw}`}
+              aria-label="Call Support"
+              className="flex items-center justify-center w-10 h-10 rounded-full border-2 border-mi-navy/10 text-mi-navy hover:bg-mi-navy hover:text-white transition-all duration-300"
+            >
+              <Phone size={18} />
+            </a>
+            <a
+              href="https://wa.me/916361231500?text=Hi%20Micore!%20I'm%20on%20your%20website%20and%20looking%20for%20some%20instant%20tech%20help."
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center px-6 py-2.5 rounded-full bg-[#25D366] text-white font-semibold hover:bg-[#25D366]/90 transition-all shadow-lg shadow-[#25D366]/20"
+              aria-label="WhatsApp Support"
+              className="flex items-center justify-center w-10 h-10 rounded-full bg-[#25D366] text-white hover:bg-[#25D366]/90 hover:scale-105 transition-all duration-300 shadow-md shadow-[#25D366]/20"
             >
-              <WhatsAppLogo className="mr-2 w-5 h-5" />
-              WhatsApp
+              <WhatsAppLogo className="w-5 h-5" />
             </a>
           </div>
 
@@ -123,22 +130,29 @@ const Navbar = () => {
               {link.name}
             </a>
           ))}
-          <div className="pt-4 flex flex-col space-y-3">
+          <div className="pt-4 flex justify-center space-x-4">
             <a
-              href={`tel:${CONTACT_INFO.phoneRaw}`}
-              className="flex items-center justify-center w-full px-6 py-3 rounded-full border-2 border-mi-navy/10 text-mi-navy font-semibold"
+              href={`mailto:${CONTACT_INFO.email}`}
+              aria-label="Email Support"
+              className="flex items-center justify-center w-12 h-12 rounded-full border-2 border-mi-navy/10 text-mi-navy hover:bg-mi-navy hover:text-white transition-all duration-300"
             >
-              <Phone size={18} className="mr-2" />
-              Call Now
+              <Mail size={20} />
             </a>
             <a
-              href="https://wa.me/919500091500?text=Hi%20Micore!%20I'm%20on%20your%20website%20and%20looking%20for%20some%20instant%20tech%20help."
+              href={`tel:${CONTACT_INFO.phoneRaw}`}
+              aria-label="Call Support"
+              className="flex items-center justify-center w-12 h-12 rounded-full border-2 border-mi-navy/10 text-mi-navy hover:bg-mi-navy hover:text-white transition-all duration-300"
+            >
+              <Phone size={20} />
+            </a>
+            <a
+              href="https://wa.me/916361231500?text=Hi%20Micore!%20I'm%20on%20your%20website%20and%20looking%20for%20some%20instant%20tech%20help."
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center w-full px-6 py-3 rounded-full bg-[#25D366] text-white font-semibold"
+              aria-label="WhatsApp Support"
+              className="flex items-center justify-center w-12 h-12 rounded-full bg-[#25D366] text-white hover:bg-[#25D366]/90 transition-all duration-300 shadow-md shadow-[#25D366]/20"
             >
-              <WhatsAppLogo className="mr-2 w-5 h-5" />
-              WhatsApp
+              <WhatsAppLogo className="w-6 h-6" />
             </a>
           </div>
         </div>

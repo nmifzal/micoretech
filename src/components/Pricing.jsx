@@ -1,23 +1,22 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Check, ArrowRight, ShieldCheck, Sparkles } from 'lucide-react';
+import { CONTACT_INFO } from '../constants/contactInfo';
 
 const Pricing = () => {
   const [activeTab, setActiveTab] = useState('one-time');
 
   const pricingData = {
     'one-time': [
-      { name: 'Basic', price: '₹499', coverage: 'Single issue', features: ['Remote support', 'Same-day resolution', 'Basic diagnosis'], highlight: false },
       { name: 'Standard', price: '₹999', coverage: 'Up to 2 issues', features: ['Remote support', 'Same-day resolution', 'Full optimization'], highlight: true },
       { name: 'Advanced', price: '₹1,499', coverage: 'Multiple issues', features: ['Remote support', 'Same-day resolution', 'Security audit'], highlight: false },
     ],
     'monthly': [
-      { name: 'Basic', price: '₹499', period: '/mo', bestFor: 'Light users', features: ['Unlimited support', 'Priority assistance', 'Email support'], highlight: false },
-      { name: 'Standard', price: '₹999', period: '/mo', bestFor: 'Home users', features: ['Unlimited support', 'Priority assistance', 'WhatsApp access'], highlight: true },
-      { name: 'Premium', price: '₹1,499', period: '/mo', bestFor: 'Freelancers', features: ['Unlimited support', 'Priority assistance', 'Multi-device'], highlight: false },
+      { name: 'Standard', price: '₹1,499', period: '/mo', coverage: 'single device', features: ['Unlimited support', 'Priority assistance', 'WhatsApp access'], highlight: true },
+      { name: 'Advanced', price: '₹2,499', period: '/mo', coverage: 'for 3 devices', features: ['Unlimited support', 'Priority assistance', 'Multi-device'], highlight: false },
     ],
     'annual': [
-      { name: 'Individual', price: '₹5,999', period: '/year', coverage: 'Direct Tech Access', features: ['Unlimited single device support', 'Annual tune-up', 'Privacy audit'], highlight: false },
+      { name: 'Individual', price: '₹4,999', period: '/year', coverage: 'single device', features: ['Unlimited single device support', 'Annual tune-up', 'Privacy audit'], highlight: false },
       { name: 'Family', price: '₹9,999', period: '/year', coverage: '3 Devices Coverage', features: ['Support for 3 devices', 'Full family security', 'Priority weekend help'], highlight: true },
     ]
   };
@@ -29,7 +28,7 @@ const Pricing = () => {
   ];
 
   const getWhatsAppUrl = (plan) => {
-    const phoneNumber = "919500091500";
+    const phoneNumber = CONTACT_INFO.phoneRaw.replace('+', '');
     let message = `Hi Micore! I'm interested in the `;
     
     if (activeTab === 'one-time') {
@@ -88,11 +87,7 @@ const Pricing = () => {
 
         <motion.div 
           layout
-          className={`grid gap-8 ${
-            activeTab === 'annual' 
-              ? 'grid-cols-1 md:grid-cols-2 max-w-4xl mx-auto' 
-              : 'grid-cols-1 md:grid-cols-3'
-          }`}
+          className="grid gap-8 grid-cols-1 md:grid-cols-2 max-w-4xl mx-auto"
         >
           <AnimatePresence mode="wait">
             {pricingData[activeTab].map((plan, index) => (
@@ -121,7 +116,7 @@ const Pricing = () => {
                     <span className={`ml-2 text-sm font-bold ${plan.highlight ? 'text-white/50' : 'text-mi-navy/40'}`}>{plan.period || ''}</span>
                   </div>
                   <p className={`text-sm font-bold uppercase tracking-widest ${plan.highlight ? 'text-mi-yellow' : 'text-mi-blue'}`}>
-                    {activeTab === 'monthly' ? `Best For: ${plan.bestFor}` : `Coverage: ${plan.coverage}`}
+                    {activeTab === 'one-time' ? `Coverage: ${plan.coverage}` : plan.coverage}
                   </p>
                 </div>
 

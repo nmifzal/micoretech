@@ -47,7 +47,7 @@ const Hero = () => {
             className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-20"
           >
             <a 
-              href="https://wa.me/919500091500?text=Hi%20Micore!%20I'd%20like%20to%20get%20started%20with%20a%20free%20tech%20diagnosis.%20How%20can%20you%20help%20me%3F"
+              href="https://wa.me/916361231500?text=Hi%20Micore!%20I'd%20like%20to%20get%20started%20with%20a%20free%20tech%20diagnosis.%20How%20can%20you%20help%20me%3F"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto px-10 py-5 rounded-full bg-mi-blue text-white font-bold text-lg hover:bg-mi-blue/90 transition-all shadow-2xl shadow-mi-blue/20 flex items-center justify-center group"
@@ -73,7 +73,7 @@ const Hero = () => {
             {[
               { label: "100% Secure", icon: <ShieldCheck size={20} /> },
               { label: "100% Private", icon: <Lock size={20} /> },
-              { label: "Certified Techs", icon: <CheckCircle2 size={20} /> },
+              { label: "Experienced Microsoft Technicians", icon: <CheckCircle2 size={20} /> },
             ].map((item, id) => (
               <div
                 key={id}

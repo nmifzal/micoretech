@@ -7,7 +7,7 @@ import PersonalSupport from "./components/PersonalSupport";
 import Pricing from "./components/Pricing";
 import Services from "./components/Services";
 import Testimonials from "./components/Testimonials";
-import { WhatsAppFAB } from "./components/ui/WhatsAppFAB";
+
 import LegalModal from "./components/ui/LegalModal";
 
 function App() {
@@ -33,7 +33,7 @@ function App() {
         <Contact />
       </main>
       <Footer openModal={openLegalModal} />
-      <WhatsAppFAB />
+
       
       <LegalModal 
         isOpen={legalModal.isOpen} 
