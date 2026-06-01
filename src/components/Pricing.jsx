@@ -8,6 +8,7 @@ const Pricing = () => {
 
   const pricingData = {
     'one-time': [
+      { name: 'Basic', price: '₹499', coverage: 'Single issue', features: ['Remote support', 'Same-day resolution', 'Basic diagnosis'], highlight: false },
       { name: 'Standard', price: '₹999', coverage: 'Up to 2 issues', features: ['Remote support', 'Same-day resolution', 'Full optimization'], highlight: true },
       { name: 'Advanced', price: '₹1,499', coverage: 'Multiple issues', features: ['Remote support', 'Same-day resolution', 'Security audit'], highlight: false },
     ],
@@ -87,7 +88,11 @@ const Pricing = () => {
 
         <motion.div 
           layout
-          className="grid gap-8 grid-cols-1 md:grid-cols-2 max-w-4xl mx-auto"
+          className={`grid gap-8 ${
+            pricingData[activeTab].length === 2 
+              ? 'grid-cols-1 md:grid-cols-2 max-w-4xl mx-auto' 
+              : 'grid-cols-1 md:grid-cols-3'
+          }`}
         >
           <AnimatePresence mode="wait">
             {pricingData[activeTab].map((plan, index) => (
