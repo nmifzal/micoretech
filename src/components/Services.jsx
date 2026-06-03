@@ -55,8 +55,13 @@ const Services = () => {
     <section id="services" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-mi-blue font-bold tracking-wider mb-2">OUR SPECIALIZATIONS</h2>
-          <p className="text-4xl md:text-5xl font-bold text-mi-navy">Technology Support That <span className="text-mi-blue">Feels Personal</span></p>
+          <h2 className="inline-flex items-center px-4 py-1.5 rounded-full bg-mi-blue/10 text-mi-blue font-bold text-xs uppercase tracking-widest mb-6">
+            OUR SPECIALIZATIONS
+          </h2>
+          <p className="text-4xl md:text-5xl font-bold text-mi-navy">
+            Technology Support That{" "}
+            <span className="text-mi-blue">Feels Personal</span>
+          </p>
         </div>
 
         <motion.div
@@ -70,7 +75,7 @@ const Services = () => {
             <motion.div
               key={index}
               variants={item}
-              className="p-8 rounded-2xl glass border-white/20 shadow-sm hover:shadow-xl hover:border-mi-blue/20 hover:-translate-y-1 transition-all group"
+              className="p-8 rounded-2xl glass border-white/20 shadow-sm hover:shadow-xl hover:border-mi-blue/20 hover:scale-110 transition-all group"
             >
               <div className="w-16 h-16 rounded-2xl bg-mi-blue/5 flex items-center justify-center mb-6 group-hover:bg-mi-blue/10 transition-colors">
                 {service.icon}

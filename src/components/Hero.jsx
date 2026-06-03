@@ -1,9 +1,11 @@
 import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2, Lock, ShieldCheck, Zap } from "lucide-react";
 import Threads from "./ui/Threads";
+import Waves from "./ui/Waves";
+
 const Hero = () => {
   return (
-    <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden from-white via-mi-light/30 to-blue-50/20">
+    <section className="md:h-screen relative pt-32 pb-20 lg:pt-32 lg:pb-32 overflow-hidden from-white via-mi-light/30 to-blue-50/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-4xl mx-auto">
           {/* Badge */}
@@ -46,7 +48,7 @@ const Hero = () => {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-20"
           >
-            <a 
+            <a
               href="https://wa.me/916361231500?text=Hi%20Micore!%20I'd%20like%20to%20get%20started%20with%20a%20free%20tech%20diagnosis.%20How%20can%20you%20help%20me%3F"
               target="_blank"
               rel="noopener noreferrer"
@@ -55,7 +57,7 @@ const Hero = () => {
               Start Free Diagnosis
               <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
             </a>
-            <a 
+            <a
               href="#services"
               className="w-full sm:w-auto px-10 py-5 rounded-full border-2 border-mi-navy/5 text-mi-navy font-bold text-lg hover:bg-mi-navy/5 transition-all backdrop-blur-sm flex items-center justify-center"
             >
@@ -64,7 +66,7 @@ const Hero = () => {
           </motion.div>
 
           {/* Trust Strip */}
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
@@ -85,17 +87,24 @@ const Hero = () => {
                 </span>
               </div>
             ))}
-          </motion.div>
+          </motion.div> */}
         </div>
       </div>
 
-      {/* Aurora Background */}
+      {/* Waves Background */}
       <div className="absolute inset-0 z-0">
-        <Threads
-          color={[0, 0.4823529411764706, 1]}
-          amplitude={1}
-          distance={0}
-          enableMouseInteraction
+        <Waves
+          lineColor="gray"
+          backgroundColor="transperant"
+          waveSpeedX={0.05}
+          waveSpeedY={0.01}
+          waveAmpX={40}
+          waveAmpY={20}
+          friction={0.9}
+          tension={0.01}
+          maxCursorMove={120}
+          xGap={12}
+          yGap={36}
         />
       </div>
       {/* Decorative Elements */}
