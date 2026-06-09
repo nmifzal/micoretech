@@ -5,7 +5,7 @@ import Waves from "./ui/Waves";
 
 const Hero = () => {
   return (
-    <section className="md:h-screen relative pt-32 pb-20 lg:pt-32 lg:pb-32 overflow-hidden from-white via-mi-light/30 to-blue-50/20">
+    <section className="md:min-h-screen relative pt-32 pb-20 lg:pt-32 lg:pb-32 overflow-hidden from-white via-mi-light/30 to-blue-50/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-4xl mx-auto">
           {/* Badge */}
@@ -46,7 +46,7 @@ const Hero = () => {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-20"
+            className="flex flex-col sm:flex-row items-center justify-center gap-6"
           >
             <a
               href="https://wa.me/916361231500?text=Hi%20Micore!%20I'd%20like%20to%20get%20started%20with%20a%20free%20tech%20diagnosis.%20How%20can%20you%20help%20me%3F"

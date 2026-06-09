@@ -83,7 +83,7 @@ const Testimonials = () => {
   }, [maxIndex]);
 
   return (
-    <section className="md:h-screen py-24 bg-white border-t border-gray-100 relative overflow-hidden">
+    <section className="md:min-h-screen py-24 bg-white border-t border-gray-100 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-mi-navy font-bold text-4xl mb-4 tracking-tight underline decoration-mi-blue/30 decoration-4 underline-offset-8">
