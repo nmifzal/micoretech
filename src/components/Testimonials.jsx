@@ -83,7 +83,7 @@ const Testimonials = () => {
   }, [maxIndex]);
 
   return (
-    <section className="py-24 bg-white border-t border-gray-100 relative overflow-hidden">
+    <section className="md:min-h-screen py-24 bg-white border-t border-gray-100 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-mi-navy font-bold text-4xl mb-4 tracking-tight underline decoration-mi-blue/30 decoration-4 underline-offset-8">
@@ -105,9 +105,9 @@ const Testimonials = () => {
           {/* Testimonial Track Wrapper */}
           <div className="w-full overflow-hidden py-4">
             <motion.div
-              animate={{ 
-                x: isMobile 
-                  ? `calc(-${currentIndex} * (100% + 32px))` 
+              animate={{
+                x: isMobile
+                  ? `calc(-${currentIndex} * (100% + 32px))`
                   : `calc(-${currentIndex} * (100% + 32px) / 3)` 
               }}
               transition={{ type: "spring", stiffness: 150, damping: 22 }}
@@ -116,7 +116,7 @@ const Testimonials = () => {
               {reviews.map((review) => (
                 <div
                   key={review.name}
-                  className={`p-8 rounded-2xl bg-mi-light/30 border border-gray-100 shadow-sm relative flex flex-col justify-between h-full min-h-[220px] shrink-0 ${
+                  className={`p-8 rounded-2xl bg-mi-light/30 border border-gray-100 shadow-sm relative flex flex-col justify-between min-h-full shrink-0 ${
                     isMobile ? "w-full" : "w-[calc((100%-64px)/3)]"
                   }`}
                 >
@@ -165,7 +165,9 @@ const Testimonials = () => {
               key={index}
               onClick={() => setCurrentIndex(index)}
               className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
-                index === currentIndex ? 'w-8 bg-mi-blue' : 'w-2.5 bg-mi-blue/20 hover:bg-mi-blue/40'
+                index === currentIndex
+                  ? "w-8 bg-mi-blue"
+                  : "w-2.5 bg-mi-blue/20 hover:bg-mi-blue/40"
               }`}
               aria-label={`Go to slide ${index + 1}`}
             />

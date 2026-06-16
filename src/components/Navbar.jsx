@@ -31,10 +31,10 @@ const Navbar = () => {
       }`}
     >
       <div
-        className={`max-w-7xl mx-auto transition-all duration-500 ${
+        className={`w-full transition-all duration-500 ${
           scrolled
             ? "glass rounded-full px-6 shadow-xl border-white/40"
-            : "bg-white/80 backdrop-blur-md border-b border-gray-100"
+            : "backdrop-blur-md border-gray-100"
         }`}
       >
         {/* Scroll Progress Bar
@@ -45,7 +45,7 @@ const Navbar = () => {
 
         <div
           className={` flex justify-between items-center transition-all duration-500 ${
-            scrolled ? "h-16" : "mx-2 h-20"
+            scrolled ? "h-16" : "mx-4 xl:mx-20 h-20"
           }`}
         >
           {/* Logo */}
@@ -54,7 +54,7 @@ const Navbar = () => {
               src="/logo-full.png"
               alt="Micore Technologies - Your Personal Tech Concierge"
               className="h-12 w-auto"
-              fetchpriority="high"
+              fetchPriority="high"
             />
           </div>
 
@@ -117,7 +117,7 @@ const Navbar = () => {
         animate={
           isOpen ? { height: "auto", opacity: 1 } : { height: 0, opacity: 0 }
         }
-        className="md:hidden overflow-hidden bg-white border-b border-gray-100"
+        className={`md:hidden overflow-hidden bg-white glass border-b border-gray-100 text-center ${scrolled && "rounded-xl mt-2"}`}
       >
         <div className="px-4 pt-2 pb-6 space-y-2">
           {navLinks.map((link) => (

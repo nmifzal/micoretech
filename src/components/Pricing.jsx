@@ -157,7 +157,7 @@ const Pricing = () => {
         </motion.div>
 
         {/* Global Features Banner */}
-        <motion.div 
+        {/* <motion.div 
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           className="mt-16 bg-white/40 backdrop-blur-sm border border-white/40 p-6 rounded-2xl flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16"
@@ -173,7 +173,7 @@ const Pricing = () => {
               <Sparkles size={20} className="text-mi-blue" /> Priority Assistance
             </div>
           )}
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );

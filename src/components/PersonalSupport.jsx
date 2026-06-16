@@ -16,9 +16,9 @@ const PersonalSupport = () => {
           >
             <div className="aspect-square bg-mi-light/50 rounded-3xl overflow-hidden shadow-2xl relative border border-gray-100 group">
               {/* Custom Generated Illustration */}
-              <img 
-                src="/tech-expert.png" 
-                alt="Expert Technical Support" 
+              <img
+                src="/tech-expert.png"
+                alt="Expert Technical Support"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-mi-navy/40 to-transparent"></div>
@@ -57,7 +57,10 @@ const PersonalSupport = () => {
                 { title: 'Friendly Experts', icon: <HeartPulse size={20} className="text-mi-blue" />, desc: 'Human beings who speak plain English, not technical jargon.' },
                 { title: 'Instant Help', icon: <Settings size={20} className="text-mi-blue" />, desc: 'No appointments needed for emergency troubleshooting.' },
               ].map((item, id) => (
-                <div key={id} className="flex items-start gap-4 p-4 rounded-xl hover:bg-mi-light transition-colors">
+                <div
+                  key={id}
+                  className="flex items-start gap-4 p-4 rounded-xl transition-colors"
+                >
                   <div className="mt-1">{item.icon}</div>
                   <div>
                     <h4 className="text-mi-navy font-bold text-lg mb-1">{item.title}</h4>
